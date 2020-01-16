@@ -1,19 +1,33 @@
+import 'package:bmi_calculator/screens/results_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-import 'input_page.dart';
+import 'constants.dart';
+import 'screens/input_page.dart';
 
-void main() => runApp(BMICalculator());
+void main() {
+  final mySystemTheme = SystemUiOverlayStyle.dark
+      .copyWith(systemNavigationBarColor: Colors.black);
+
+  SystemChrome.setSystemUIOverlayStyle(mySystemTheme);
+
+  runApp(BMICalculator());
+}
 
 class BMICalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Color deepPurple = Color(0xFF0A0E21);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        primaryColor: deepPurple,
-        scaffoldBackgroundColor: deepPurple,
+        primaryColor: kDeepPurple,
+        scaffoldBackgroundColor: kDeepPurple,
       ),
-      home: InputPage(),
+      initialRoute: 'input',
+      routes: {
+        'input': (context) => InputPage(),
+        'results': (context) => ResultsPage(),
+      },
     );
   }
 }
