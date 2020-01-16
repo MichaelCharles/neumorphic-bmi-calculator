@@ -4,4 +4,4 @@ This is my take on the London App Brewery's BMI Calculator App using neumorphism
 
 ## Sample
 
-![Animated Example](demo/demo.gif)
+![Animated Example](demo/demo_width_300.gif)
